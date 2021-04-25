@@ -2,6 +2,8 @@
 
 > [tee](https://en.wikipedia.org/wiki/Tee_%28command%29) for AsyncIterable
 
+You can branch the given source async iterable into N async itrables.
+
 # Usage
 
 ```ts
