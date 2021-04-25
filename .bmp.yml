@@ -5,3 +5,4 @@ files:
   README.md:
   - tee_async_iterable v%.%.%
   - tee_async_iterable@v%.%.%
+  package.json: '"version": "%.%.%"'

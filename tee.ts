@@ -50,36 +50,38 @@ class AsyncIterableClone<T> implements AsyncIterable<T> {
   }
 }
 
-// Branches the given async iterable to the n branches.
-//
-// Example:
-//
-//     const gen = async function* gen() {
-//       yield 1;
-//       yield 2;
-//       yield 3;
-//     }
-//
-//     const [branch1, branch2] = tee(gen());
-//
-//     (async () => {
-//       for await (const n of branch1) {
-//         console.log(n); // => 1, 2, 3
-//       }
-//     })();
-//
-//     (async () => {
-//       for await (const n of branch2) {
-//         console.log(n); // => 1, 2, 3
-//       }
-//     })();
+/**
+ * Branches the given async iterable to the n branches.
+ *
+ * Example:
+ *
+ *     const gen = async function* gen() {
+ *       yield 1;
+ *       yield 2;
+ *       yield 3;
+ *     }
+ *
+ *     const [branch1, branch2] = tee(gen());
+ *
+ *     (async () => {
+ *       for await (const n of branch1) {
+ *         console.log(n); // => 1, 2, 3
+ *       }
+ *     })();
+ *
+ *     (async () => {
+ *       for await (const n of branch2) {
+ *         console.log(n); // => 1, 2, 3
+ *       }
+ *     })();
+ */
 export function tee<T, N extends number = 2>(
   src: AsyncIterable<T>,
   n: N = 2 as N,
 ): Tuple<AsyncIterable<T>, N> {
-  // deno-lint-ignore no-explicit-any
   const clones: Tuple<AsyncIterableClone<T>, N> = Array.from({ length: n }).map(
     () => new AsyncIterableClone(),
+  // deno-lint-ignore no-explicit-any
   ) as any;
   (async () => {
     const iter = src[Symbol.asyncIterator]();

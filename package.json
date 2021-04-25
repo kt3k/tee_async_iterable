@@ -1,0 +1,23 @@
+{
+  "name": "tee-async-iterable",
+  "version": "0.2.0",
+  "description": "tee for AsyncIterable",
+  "main": "tee.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kt3k/tee_async_iterable.git"
+  },
+  "keywords": [
+    "tee",
+    "asynciterable"
+  ],
+  "author": "Yoshiya Hinosawa",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kt3k/tee_async_iterable/issues"
+  },
+  "homepage": "https://github.com/kt3k/tee_async_iterable#readme"
+}
