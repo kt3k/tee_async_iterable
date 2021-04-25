@@ -1,0 +1,6 @@
+version: 0.1.0
+commit: "chore: bump to %.%.%"
+files:
+  README.md:
+    - tee_async_iterable v%.%.%
+    - tee_async_iterable@v%.%.%
