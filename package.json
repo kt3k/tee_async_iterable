@@ -1,6 +1,6 @@
 {
   "name": "tee-async-iterable",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "tee for AsyncIterable",
   "main": "tee.mjs",
   "types": "tee.d.ts",
