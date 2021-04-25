@@ -4,7 +4,7 @@ const gen = async function* gen() {
   yield 1;
   yield 2;
   yield 3;
-}
+};
 
 const [branch1, branch2] = tee(gen());
 

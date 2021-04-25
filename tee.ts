@@ -1,6 +1,10 @@
 // Utility for representing n-tuple
-type Tuple<T, N extends number> = N extends N ? number extends N ? T[] : TupleOf<T, N, []> : never;
-type TupleOf<T, N extends number, R extends unknown[]> = R['length'] extends N ? R : TupleOf<T, N, [T, ...R]>;
+type Tuple<T, N extends number> = N extends N
+  ? number extends N ? T[] : TupleOf<T, N, []>
+  : never;
+type TupleOf<T, N extends number, R extends unknown[]> = R["length"] extends N
+  ? R
+  : TupleOf<T, N, [T, ...R]>;
 
 const noop = () => {};
 
@@ -38,7 +42,7 @@ class AsyncIterableClone<T> implements AsyncIterable<T> {
   async push(res: Promise<IteratorResult<T>>): Promise<void> {
     this.resolveCurrent(res);
     // Wait until current promise is consumed and next item is requested.
-    await this.consumed
+    await this.consumed;
   }
 
   [Symbol.asyncIterator](): AsyncIterator<T> {
@@ -69,9 +73,14 @@ class AsyncIterableClone<T> implements AsyncIterable<T> {
 //         console.log(n); // => 1, 2, 3
 //       }
 //     })();
-export function tee<T, N extends number = 2>(src: AsyncIterable<T>, n: N = 2 as N): Tuple<AsyncIterable<T>, N> {
+export function tee<T, N extends number = 2>(
+  src: AsyncIterable<T>,
+  n: N = 2 as N,
+): Tuple<AsyncIterable<T>, N> {
   // deno-lint-ignore no-explicit-any
-  const clones: Tuple<AsyncIterableClone<T>, N> = Array.from({ length: n }).map(() => new AsyncIterableClone()) as any;
+  const clones: Tuple<AsyncIterableClone<T>, N> = Array.from({ length: n }).map(
+    () => new AsyncIterableClone()
+  ) as any;
   (async () => {
     const iter = src[Symbol.asyncIterator]();
     await Promise.resolve();
@@ -79,7 +88,7 @@ export function tee<T, N extends number = 2>(src: AsyncIterable<T>, n: N = 2 as 
       const res = iter.next();
       await Promise.all(clones.map((c) => c.push(res)));
       if ((await res).done) {
-	break;
+        break;
       }
     }
   })().catch((e) => {
