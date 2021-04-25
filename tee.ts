@@ -81,7 +81,7 @@ export function tee<T, N extends number = 2>(
 ): Tuple<AsyncIterable<T>, N> {
   const clones: Tuple<AsyncIterableClone<T>, N> = Array.from({ length: n }).map(
     () => new AsyncIterableClone(),
-  // deno-lint-ignore no-explicit-any
+    // deno-lint-ignore no-explicit-any
   ) as any;
   (async () => {
     const iter = src[Symbol.asyncIterator]();
