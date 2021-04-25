@@ -2,7 +2,8 @@
   "name": "tee-async-iterable",
   "version": "0.2.1",
   "description": "tee for AsyncIterable",
-  "main": "tee.js",
+  "main": "tee.mjs",
+  "types": "tee.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
