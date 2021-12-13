@@ -1,3 +1,5 @@
+<!-- @deprecated Use https://deno.land/std/async/tee.ts instead. -->
+
 # tee_async_iterable v0.2.2
 
 > [tee](https://en.wikipedia.org/wiki/Tee_%28command%29) for AsyncIterable
