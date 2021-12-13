@@ -1,8 +1,7 @@
----
-version: 0.2.2
+version: 0.2.3
 commit: 'chore: bump to %.%.%'
 files:
   README.md:
-  - tee_async_iterable v%.%.%
-  - tee_async_iterable@v%.%.%
+    - tee_async_iterable v%.%.%
+    - tee_async_iterable@v%.%.%
   package.json: '"version": "%.%.%"'

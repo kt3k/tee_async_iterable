@@ -1,6 +1,6 @@
 <!-- @deprecated Use https://deno.land/std/async/tee.ts instead. -->
 
-# tee_async_iterable v0.2.2
+# tee_async_iterable v0.2.3
 
 > [tee](https://en.wikipedia.org/wiki/Tee_%28command%29) for AsyncIterable
 
@@ -11,7 +11,7 @@ You can branch the given source async iterable into N async itrables.
 In deno:
 
 ```ts
-import { tee } from "https://deno.land/x/tee_async_iterable@v0.2.2/tee.ts";
+import { tee } from "https://deno.land/x/tee_async_iterable@v0.2.3/tee.ts";
 
 // The source async iterator
 const gen = async function* gen() {
